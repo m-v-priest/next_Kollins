@@ -15,6 +15,7 @@ export default class Cpn_TextArea extends React.Component {
     constructor(props) {
         super(props)
         this.state = objStore.getState() //从银行拿到默认的state对象
+        objStore.subscribe(this.fn_updateThisState)
     }
 
     render() {
@@ -40,6 +41,7 @@ export default class Cpn_TextArea extends React.Component {
                            value={'清空'}
                            onClick={() => {
                            }}/>
+                    &nbsp;
 
                     {/*按钮:保存文本框中的值到电脑文件*/}
                     <input type="submit" value="让服务器保存文件到电脑上"/>
@@ -49,6 +51,10 @@ export default class Cpn_TextArea extends React.Component {
 
             </React.Fragment>
         )
+    }
+
+    fn_updateThisState = () => { //一旦监听到财务专家更新了state对象, 就执行本回调函数
+        this.setState(objStore.getState())
     }
 
 }

@@ -166,7 +166,7 @@ export default class Cpn_Index extends React.Component {
     componentDidMount() {
         axios.get(this.state.url_BigArrJsonKollins)
             .then(res => {
-                this.setState({arr_AllWords: res.data})
+                this.setState({arr_KollinsAllWords: res.data})
             })
             .catch(err => {
                 console.log(err);
@@ -190,10 +190,10 @@ export default class Cpn_Index extends React.Component {
         并设置到state对象中的"index_wordCurrentFind"字段中.
         并同时更新state对象中的"单词各信息"的字段.
          */
-        this.state.arr_AllWords.forEach((itemObj, index, arr) => {
+        this.state.arr_KollinsAllWords.forEach((itemObj, index, arr) => {
             if (itemObj.key词头 === wordName) {
                 // console.log('单词被找到!');
-                const obj_wordValue = this.state.arr_AllWords[index] //obj_wordValue就是找到的单词的所有详细柯林斯信息,包括词头,音标,词根, 所有释例.
+                const obj_wordValue = this.state.arr_KollinsAllWords[index] //obj_wordValue就是找到的单词的所有详细柯林斯信息,包括词头,音标,词根, 所有释例.
                 this.setState({
                     index_wordCurrentFind: index, word_name: obj_wordValue.key词头,
                     word_currentFind: obj_wordValue.key词头,
@@ -297,7 +297,7 @@ export default class Cpn_Index extends React.Component {
 
     //获取数组切片后, 里面所有词头组成的数组, 并更新到state对象中的arrSlice_wordName属性的值
     fn_获取数组切片后的里面所有词头组成的数组(arrJson_kollins) {
-        let arrSlice = this.state.arr_AllWords.slice(this.state.index_start, this.state.index_end) //返回一个数组的切片(子数组)
+        let arrSlice = this.state.arr_KollinsAllWords.slice(this.state.index_start, this.state.index_end) //返回一个数组的切片(子数组)
 
         let arrSlice_WordName = [] //存放对数组切片后, 里面的所有词头
         arrSlice.forEach((itemObjWord, index, arr) => {

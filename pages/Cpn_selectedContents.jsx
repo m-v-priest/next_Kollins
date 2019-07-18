@@ -11,6 +11,7 @@ export default class Cpn_selectedContents extends React.Component {
     constructor(props) {
         super(props)
         this.state = objStore.getState() //从银行拿到默认的state对象
+        objStore.subscribe(this.fn_updateThisState)
     }
 
     render() {
@@ -31,6 +32,10 @@ export default class Cpn_selectedContents extends React.Component {
 
             </React.Fragment>
         )
+    }
+
+    fn_updateThisState = () => { //一旦监听到财务专家更新了state对象, 就执行本回调函数
+        this.setState(objStore.getState())
     }
 
 }
