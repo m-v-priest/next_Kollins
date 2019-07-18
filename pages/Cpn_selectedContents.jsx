@@ -2,6 +2,8 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
+import * as moduleMyfunc from '../store/myFunc.js'
+
 
 import objStore from '../store/objStore.js'
 import * as moduleAction from '../store/fnCreateObjAction.js'
@@ -23,7 +25,7 @@ export default class Cpn_selectedContents extends React.Component {
                         .map((item, index, arr) => {
                             return (<p key={index}
                                        onClick={() => {
-
+                                           moduleMyfunc.fn_发送命令书_从选出内容的数组中删除本元素(index)
                                        }}>{item}</p>)
                         })}
                 </div>

@@ -50,5 +50,39 @@ export function fn_创建命令书_获取下20个单词(valueNew) {
 }
 
 
+export function fn_创建命令书_udpate_arrSelectedContent(valueNew) {
+    let objAction = {
+        type: '命令书_更新arr_selectedContent',
+        value: valueNew,
+    }
+    return objAction
+}
+
+
+export function fn_创建命令书_从选出内容的数组中删除本元素(valueNew) {
+    let objAction = {
+        type: '命令书_从选出内容的数组中删除本元素',
+        value: valueNew,
+    }
+    return objAction
+}
+
+export function fn_创建命令书_更新str_textArea(valueNew) {
+    let objAction = {
+        type: '命令书_更新str_textArea',
+        value: valueNew,
+    }
+    return objAction
+}
+
+export function fn_创建命令书_清空str_textArea(valueNew) {
+    let objAction = {
+        type: '命令书_清空str_textArea',
+        value: valueNew,
+    }
+    return objAction
+}
+
+
 
 

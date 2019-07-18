@@ -26,17 +26,7 @@ export default class Cpn_Index extends React.Component {
                 <Cpn_sliceArrWordName/>
                 <Cpn_SingleWordAllInfo/>
                 <Cpn_selectedContents/>
-
-                {/*按钮: 把选出内容添加到文本框*/}
-                <input type="button"
-                       value={'添加到下面的文本框中'}
-                       onClick={() => {
-
-                       }}
-                />
-
                 <Cpn_TextArea/>
-
 
             </React.Fragment>
         )

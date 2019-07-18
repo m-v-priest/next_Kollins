@@ -9,6 +9,7 @@ import ReactDOM from 'react-dom';
 
 import objStore from '../store/objStore.js'
 import * as moduleAction from '../store/fnCreateObjAction.js'
+import * as moduleMyfunc from "../store/myFunc";
 
 
 export default class Cpn_TextArea extends React.Component {
@@ -21,6 +22,14 @@ export default class Cpn_TextArea extends React.Component {
     render() {
         return (
             <React.Fragment>
+
+                {/*按钮: 把选出内容添加到文本框*/}
+                <input type="button"
+                       value={'添加到下面的文本框中'}
+                       onClick={() => {
+                           moduleMyfunc.fn_发送命令书_更新str_textArea()
+                       }}
+                />
 
                 <form action="#"
                       method="get"
@@ -40,6 +49,7 @@ export default class Cpn_TextArea extends React.Component {
                     <input type="button"
                            value={'清空'}
                            onClick={() => {
+                               moduleMyfunc.fn_发送命令书_清空str_textArea()
                            }}/>
                     &nbsp;
 

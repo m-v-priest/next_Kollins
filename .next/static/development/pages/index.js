@@ -6842,6 +6842,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_8__);
 /* harmony import */ var _store_objStore_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../store/objStore.js */ "./store/objStore.js");
 /* harmony import */ var _store_fnCreateObjAction_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../store/fnCreateObjAction.js */ "./store/fnCreateObjAction.js");
+/* harmony import */ var _store_myFunc__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../store/myFunc */ "./store/myFunc.js");
 
 
 
@@ -6850,6 +6851,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 //单个单词在柯林斯中的详细内容
+
 
 
 
@@ -6884,7 +6886,9 @@ function (_React$Component) {
       return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_7___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", null, " kollins\u4E2D\u5BF9\u672C\u5355\u8BCD\u7684\u89E3\u91CA:", react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("p", null, "\u7D22\u5F15\u503C\u4E3A: ", this.state.index_wordCurrentFind), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("p", null, "\u8BCD\u5934: ", this.state.word_name, " | \u97F3\u6807: ", this.state.word_yinBiao), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("p", null, "\u8BCD\u6839: ", this.state.word_ciGeng), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", null, "\u6240\u6709\u91CA\u4F8B:", this.state.word_ArrDef.map(function (strItem, index, arr) {
         return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("p", {
           key: index,
-          onClick: function onClick(event) {}
+          onClick: function onClick(event) {
+            _store_myFunc__WEBPACK_IMPORTED_MODULE_11__["fn_发送命令书_更新arrSelectedContent"](event.target.innerText);
+          }
         }, strItem);
       }))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("hr", null));
     }
@@ -6920,6 +6924,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_8__);
 /* harmony import */ var _store_objStore_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../store/objStore.js */ "./store/objStore.js");
 /* harmony import */ var _store_fnCreateObjAction_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../store/fnCreateObjAction.js */ "./store/fnCreateObjAction.js");
+/* harmony import */ var _store_myFunc__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../store/myFunc */ "./store/myFunc.js");
 
 
 
@@ -6933,6 +6938,7 @@ __webpack_require__.r(__webpack_exports__);
 表单会提交这个文本框中的值, 到后端, 并用fs来保存到文件中.
 action="#" 表示 本表单提交给本页自己.
  */
+
 
 
 
@@ -6966,7 +6972,13 @@ function (_React$Component) {
     value: function render() {
       var _this2 = this;
 
-      return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_7___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("form", {
+      return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_7___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("input", {
+        type: "button",
+        value: '添加到下面的文本框中',
+        onClick: function onClick() {
+          _store_myFunc__WEBPACK_IMPORTED_MODULE_11__["fn_发送命令书_更新str_textArea"]();
+        }
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("form", {
         action: "#",
         method: "get",
         onSubmit: function onSubmit(event) {
@@ -6981,7 +6993,9 @@ function (_React$Component) {
       }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("input", {
         type: "button",
         value: '清空',
-        onClick: function onClick() {}
+        onClick: function onClick() {
+          _store_myFunc__WEBPACK_IMPORTED_MODULE_11__["fn_发送命令书_清空str_textArea"]();
+        }
       }), "\xA0", react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("input", {
         type: "submit",
         value: "\u8BA9\u670D\u52A1\u5668\u4FDD\u5B58\u6587\u4EF6\u5230\u7535\u8111\u4E0A"
@@ -7017,8 +7031,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_7__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var _store_objStore_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../store/objStore.js */ "./store/objStore.js");
-/* harmony import */ var _store_fnCreateObjAction_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../store/fnCreateObjAction.js */ "./store/fnCreateObjAction.js");
+/* harmony import */ var _store_myFunc_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../store/myFunc.js */ "./store/myFunc.js");
+/* harmony import */ var _store_objStore_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../store/objStore.js */ "./store/objStore.js");
+/* harmony import */ var _store_fnCreateObjAction_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../store/fnCreateObjAction.js */ "./store/fnCreateObjAction.js");
 
 
 
@@ -7027,6 +7042,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 //选出的释义与例句内容
+
 
 
 
@@ -7046,12 +7062,12 @@ function (_React$Component) {
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "fn_updateThisState", function () {
       //一旦监听到财务专家更新了state对象, 就执行本回调函数
-      _this.setState(_store_objStore_js__WEBPACK_IMPORTED_MODULE_9__["default"].getState());
+      _this.setState(_store_objStore_js__WEBPACK_IMPORTED_MODULE_10__["default"].getState());
     });
 
-    _this.state = _store_objStore_js__WEBPACK_IMPORTED_MODULE_9__["default"].getState(); //从银行拿到默认的state对象
+    _this.state = _store_objStore_js__WEBPACK_IMPORTED_MODULE_10__["default"].getState(); //从银行拿到默认的state对象
 
-    _store_objStore_js__WEBPACK_IMPORTED_MODULE_9__["default"].subscribe(_this.fn_updateThisState);
+    _store_objStore_js__WEBPACK_IMPORTED_MODULE_10__["default"].subscribe(_this.fn_updateThisState);
     return _this;
   }
 
@@ -7061,7 +7077,9 @@ function (_React$Component) {
       return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_7___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", null, " \u9009\u51FA\u7684\u91CA\u4E49\u4E0E\u4F8B\u53E5\u5185\u5BB9:", this.state.arr_selectedContent.map(function (item, index, arr) {
         return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("p", {
           key: index,
-          onClick: function onClick() {}
+          onClick: function onClick() {
+            _store_myFunc_js__WEBPACK_IMPORTED_MODULE_9__["fn_发送命令书_从选出内容的数组中删除本元素"](index);
+          }
         }, item);
       })), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("hr", null));
     }
@@ -7243,11 +7261,7 @@ function (_React$Component) {
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(Cpn_Index, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_5___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("p", null, "kollins\u4E3B\u63A7\u53F0"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_pages_Cpn_FindSingleWord__WEBPACK_IMPORTED_MODULE_9__["default"], null), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_pages_Cpn_sliceArrWordName__WEBPACK_IMPORTED_MODULE_10__["default"], null), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_pages_Cpn_SingleWordAllInfo__WEBPACK_IMPORTED_MODULE_11__["default"], null), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_pages_Cpn_selectedContents__WEBPACK_IMPORTED_MODULE_12__["default"], null), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("input", {
-        type: "button",
-        value: '添加到下面的文本框中',
-        onClick: function onClick() {}
-      }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_pages_Cpn_TextArea__WEBPACK_IMPORTED_MODULE_13__["default"], null));
+      return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_5___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("p", null, "kollins\u4E3B\u63A7\u53F0"), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_pages_Cpn_FindSingleWord__WEBPACK_IMPORTED_MODULE_9__["default"], null), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_pages_Cpn_sliceArrWordName__WEBPACK_IMPORTED_MODULE_10__["default"], null), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_pages_Cpn_SingleWordAllInfo__WEBPACK_IMPORTED_MODULE_11__["default"], null), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_pages_Cpn_selectedContents__WEBPACK_IMPORTED_MODULE_12__["default"], null), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(_pages_Cpn_TextArea__WEBPACK_IMPORTED_MODULE_13__["default"], null));
     }
   }]);
 
@@ -7277,7 +7291,7 @@ function (_React$Component) {
 /*!************************************!*\
   !*** ./store/fnCreateObjAction.js ***!
   \************************************/
-/*! exports provided: fn_创建命令书_update_WordCurrentFind, fn_创建命令书_findSingleWord, fn_创建命令书_update_indexStart, fn_创建命令书_update_indexEnd, fn_创建命令书_update_arrWordNameInSlice, fn_创建命令书_获取下20个单词 */
+/*! exports provided: fn_创建命令书_update_WordCurrentFind, fn_创建命令书_findSingleWord, fn_创建命令书_update_indexStart, fn_创建命令书_update_indexEnd, fn_创建命令书_update_arrWordNameInSlice, fn_创建命令书_获取下20个单词, fn_创建命令书_udpate_arrSelectedContent, fn_创建命令书_从选出内容的数组中删除本元素, fn_创建命令书_更新str_textArea, fn_创建命令书_清空str_textArea */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -7288,6 +7302,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fn_创建命令书_update_indexEnd", function() { return fn_创建命令书_update_indexEnd; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fn_创建命令书_update_arrWordNameInSlice", function() { return fn_创建命令书_update_arrWordNameInSlice; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fn_创建命令书_获取下20个单词", function() { return fn_创建命令书_获取下20个单词; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fn_创建命令书_udpate_arrSelectedContent", function() { return fn_创建命令书_udpate_arrSelectedContent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fn_创建命令书_从选出内容的数组中删除本元素", function() { return fn_创建命令书_从选出内容的数组中删除本元素; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fn_创建命令书_更新str_textArea", function() { return fn_创建命令书_更新str_textArea; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fn_创建命令书_清空str_textArea", function() { return fn_创建命令书_清空str_textArea; });
 //命令书制造工厂
 function fn_创建命令书_update_WordCurrentFind(valueNew) {
   var objAction = {
@@ -7331,6 +7349,34 @@ function fn_创建命令书_获取下20个单词(valueNew) {
   };
   return objAction;
 }
+function fn_创建命令书_udpate_arrSelectedContent(valueNew) {
+  var objAction = {
+    type: '命令书_更新arr_selectedContent',
+    value: valueNew
+  };
+  return objAction;
+}
+function fn_创建命令书_从选出内容的数组中删除本元素(valueNew) {
+  var objAction = {
+    type: '命令书_从选出内容的数组中删除本元素',
+    value: valueNew
+  };
+  return objAction;
+}
+function fn_创建命令书_更新str_textArea(valueNew) {
+  var objAction = {
+    type: '命令书_更新str_textArea',
+    value: valueNew
+  };
+  return objAction;
+}
+function fn_创建命令书_清空str_textArea(valueNew) {
+  var objAction = {
+    type: '命令书_清空str_textArea',
+    value: valueNew
+  };
+  return objAction;
+}
 
 /***/ }),
 
@@ -7352,11 +7398,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _store_myFunc_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../store/myFunc.js */ "./store/myFunc.js");
 
 
 
 
 //财务专家
+
  //客户托管在这里的默认的state对象
 
 var defaultState = {
@@ -7417,42 +7465,85 @@ var fnReducer = function fnReducer() {
 
     _newState2.index_end = objAction.value;
     return _newState2;
-  } //搜索单个单词,并将内容填充到state中的各对应字段中
+  }
 
-
-  if (objAction.type === '命令书_查找SingleWord') {
+  if (objAction.type === '命令书_更新arr_selectedContent') {
     var _newState3 = JSON.parse(_babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_3___default()(state));
 
-    _newState3.word_currentFind = objAction.value;
-
-    _newState3.arr_KollinsAllWords.forEach(function (itemWord, index, arr) {
-      if (itemWord["key词头"] === objAction.value) {
-        _newState3.index_wordCurrentFind = index;
-        _newState3.word_name = itemWord["key词头"];
-        _newState3.word_yinBiao = itemWord["key音标"];
-        _newState3.word_ciGeng = itemWord["key词根"];
-        _newState3.word_ArrDef = itemWord["key所有释例"];
-        _newState3.arr_selectedContent = []; //当重新查询单词时, 就清空上一次选出的内容
-      }
-    });
+    _newState3.arr_selectedContent.push(objAction.value);
 
     return _newState3;
   }
 
-  if (objAction.type === '命令书_更新arrWordNameInSlice') {
+  if (objAction.type === '命令书_从选出内容的数组中删除本元素') {
     var _newState4 = JSON.parse(_babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_3___default()(state));
 
-    _newState4.arr_wordNameInSlice = fn_获取数组切片区间中的词头(_newState4.arr_KollinsAllWords, _newState4.index_start, _newState4.index_end);
+    var index = objAction.value; //要删除的数组元素的索引值
+
+    _newState4.arr_selectedContent.splice(index, 1); //删除数组中指定索引处的元素. arrayObject.splice(index,howmany,item1,.....,itemX)
+
+
     return _newState4;
   }
 
-  if (objAction.type === '命令书_获取下20个单词') {
+  if (objAction.type === '命令书_更新str_textArea') {
     var _newState5 = JSON.parse(_babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_3___default()(state));
 
-    _newState5.index_start = _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_2___default()(_newState5.index_end) + 1;
-    _newState5.index_end = _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_2___default()(_newState5.index_start) + 19;
-    _newState5.arr_wordNameInSlice = fn_获取数组切片区间中的词头(_newState5.arr_KollinsAllWords, _newState5.index_start, _newState5.index_end);
+    var str = '';
+    str = _newState5.word_name + '\r\n' + _newState5.word_yinBiao + '\r\n' + _newState5.word_ciGeng + '\r\n\r\n';
+    str += _store_myFunc_js__WEBPACK_IMPORTED_MODULE_5__["fn_将arr_selectedContent转换成str_textArea"](_newState5.arr_selectedContent);
+    _newState5.str_textArea = str;
     return _newState5;
+  } //搜索单个单词,并将内容填充到state中的各对应字段中
+
+
+  if (objAction.type === '命令书_查找SingleWord') {
+    var _newState6 = JSON.parse(_babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_3___default()(state));
+
+    _newState6.word_currentFind = objAction.value;
+
+    _newState6.arr_KollinsAllWords.forEach(function (itemWord, index, arr) {
+      if (itemWord["key词头"] === objAction.value) {
+        _newState6.index_wordCurrentFind = index;
+        _newState6.word_name = itemWord["key词头"];
+        _newState6.word_yinBiao = itemWord["key音标"];
+        _newState6.word_ciGeng = itemWord["key词根"];
+        _newState6.word_ArrDef = _store_myFunc_js__WEBPACK_IMPORTED_MODULE_5__["fn_处理所有释例到一维数组"](itemWord["key所有释例"]);
+        _newState6.arr_selectedContent = []; //当重新查询单词时, 就清空上一次选出的内容
+      }
+    });
+
+    return _newState6;
+  }
+
+  if (objAction.type === '命令书_更新arrWordNameInSlice') {
+    var _newState7 = JSON.parse(_babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_3___default()(state));
+
+    _newState7.arr_wordNameInSlice = fn_获取数组切片区间中的词头(_newState7.arr_KollinsAllWords, _newState7.index_start, _newState7.index_end);
+    return _newState7;
+  }
+
+  if (objAction.type === '命令书_获取下20个单词') {
+    var _newState8 = JSON.parse(_babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_3___default()(state));
+
+    _newState8.index_start = _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_2___default()(_newState8.index_end) + 1;
+    _newState8.index_end = _babel_runtime_corejs2_core_js_parse_int__WEBPACK_IMPORTED_MODULE_2___default()(_newState8.index_start) + 19;
+    _newState8.arr_wordNameInSlice = fn_获取数组切片区间中的词头(_newState8.arr_KollinsAllWords, _newState8.index_start, _newState8.index_end);
+    return _newState8;
+  }
+
+  if (objAction.type === '命令书_清空str_textArea') {
+    var _newState9 = JSON.parse(_babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_3___default()(state));
+
+    _newState9.str_textArea = ''; //除了清空文本框中的值外
+
+    _newState9.arr_selectedContent = [];
+    /*也要清空选出的句子, 别忘了这一点!
+     因为你添加到str_textArea中的句子, 是从arr_selectedContent中来挑选的,
+     如果不清空arr_selectedContent, 里面的残留, 会造成str_textArea里的脏数据.
+     */
+
+    return _newState9;
   }
 
   return state; //如果没有进入上面的if语句而返回一个newState, 本函数也要返回一个默认的defaultState.
@@ -7518,7 +7609,7 @@ function fn_获取数组切片区间中的词头(arr, indexStart, indexEnd) {
 /*!*************************!*\
   !*** ./store/myFunc.js ***!
   \*************************/
-/*! exports provided: fn_发送命令书_双向绑定word_currentFind, fn_发送命令书_搜索单词, fn_发送命令书_更新indexStart, fn_发送命令书_更新indexEnd, fn_发送命令书_获取切片中的词头数组, fn_发送命令书_获取下20个单词 */
+/*! exports provided: fn_发送命令书_双向绑定word_currentFind, fn_发送命令书_搜索单词, fn_发送命令书_更新indexStart, fn_发送命令书_更新indexEnd, fn_发送命令书_获取切片中的词头数组, fn_发送命令书_获取下20个单词, fn_发送命令书_更新arrSelectedContent, fn_发送命令书_从选出内容的数组中删除本元素, fn_发送命令书_更新str_textArea, fn_发送命令书_清空str_textArea, fn_处理所有释例到一维数组, fn_将arr_selectedContent转换成str_textArea */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -7529,6 +7620,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fn_发送命令书_更新indexEnd", function() { return fn_发送命令书_更新indexEnd; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fn_发送命令书_获取切片中的词头数组", function() { return fn_发送命令书_获取切片中的词头数组; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fn_发送命令书_获取下20个单词", function() { return fn_发送命令书_获取下20个单词; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fn_发送命令书_更新arrSelectedContent", function() { return fn_发送命令书_更新arrSelectedContent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fn_发送命令书_从选出内容的数组中删除本元素", function() { return fn_发送命令书_从选出内容的数组中删除本元素; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fn_发送命令书_更新str_textArea", function() { return fn_发送命令书_更新str_textArea; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fn_发送命令书_清空str_textArea", function() { return fn_发送命令书_清空str_textArea; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fn_处理所有释例到一维数组", function() { return fn_处理所有释例到一维数组; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fn_将arr_selectedContent转换成str_textArea", function() { return fn_将arr_selectedContent转换成str_textArea; });
 /* harmony import */ var _objStore__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./objStore */ "./store/objStore.js");
 /* harmony import */ var _fnCreateObjAction__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./fnCreateObjAction */ "./store/fnCreateObjAction.js");
 
@@ -7551,6 +7648,46 @@ var fn_发送命令书_获取切片中的词头数组 = function fn_发送命令
 };
 var fn_发送命令书_获取下20个单词 = function fn_发送命令书_获取下20个单词() {
   _objStore__WEBPACK_IMPORTED_MODULE_0__["default"].dispatch(_fnCreateObjAction__WEBPACK_IMPORTED_MODULE_1__["fn_创建命令书_获取下20个单词"]());
+};
+var fn_发送命令书_更新arrSelectedContent = function fn_发送命令书_更新arrSelectedContent() {
+  _objStore__WEBPACK_IMPORTED_MODULE_0__["default"].dispatch(_fnCreateObjAction__WEBPACK_IMPORTED_MODULE_1__["fn_创建命令书_udpate_arrSelectedContent"](event.target.innerText));
+};
+var fn_发送命令书_从选出内容的数组中删除本元素 = function fn_发送命令书_从选出内容的数组中删除本元素(index) {
+  _objStore__WEBPACK_IMPORTED_MODULE_0__["default"].dispatch(_fnCreateObjAction__WEBPACK_IMPORTED_MODULE_1__["fn_创建命令书_从选出内容的数组中删除本元素"](index));
+};
+var fn_发送命令书_更新str_textArea = function fn_发送命令书_更新str_textArea() {
+  _objStore__WEBPACK_IMPORTED_MODULE_0__["default"].dispatch(_fnCreateObjAction__WEBPACK_IMPORTED_MODULE_1__["fn_创建命令书_更新str_textArea"]());
+};
+var fn_发送命令书_清空str_textArea = function fn_发送命令书_清空str_textArea() {
+  _objStore__WEBPACK_IMPORTED_MODULE_0__["default"].dispatch(_fnCreateObjAction__WEBPACK_IMPORTED_MODULE_1__["fn_创建命令书_清空str_textArea"]());
+}; //----------------------------------------
+
+var fn_处理所有释例到一维数组 = function fn_处理所有释例到一维数组(arr所有释例) {
+  var newArr = []; //存放"arr所有释例"在经过处理后的扁平化一维数组
+
+  arr所有释例.forEach(function (item单个释例, index, arr) {
+    newArr.push(index + 1); //把编号也作为数组的一个item添加进去, 方便我们查看该单词到底有多少条释义.
+
+    var arr单个释例的释义与例句 = item单个释例.split('|'); //str.split([separator[, limit]])方法, 使用指定的分隔符字符串将一个String对象分割成字符串数组. 返回一个字符串数组,不包括 separator 自身。
+
+    arr单个释例的释义与例句.forEach(function (item, index, arr) {
+      newArr.push(item);
+    });
+    newArr.push('--------');
+  });
+  return newArr;
+}; //将"选出的内容的数组"转换成纯字符串
+
+var fn_将arr_selectedContent转换成str_textArea = function fn_将arr_selectedContent转换成str_textArea(arr) {
+  var str = '';
+
+  if (arr.length !== 0) {
+    arr.map(function (item) {
+      str += item + '\r\n';
+    });
+  }
+
+  return str;
 };
 
 /***/ }),

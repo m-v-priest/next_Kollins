@@ -5,6 +5,7 @@ import ReactDOM from 'react-dom';
 
 import objStore from '../store/objStore.js'
 import * as moduleAction from '../store/fnCreateObjAction.js'
+import * as moduleMyfunc from "../store/myFunc";
 
 
 export default class Cpn_SingleWordAllInfo extends React.Component {
@@ -27,7 +28,7 @@ export default class Cpn_SingleWordAllInfo extends React.Component {
                         {this.state.word_ArrDef.map((strItem, index, arr) => {
                             return (<p key={index}
                                        onClick={(event) => {
-
+                                           moduleMyfunc.fn_发送命令书_更新arrSelectedContent(event.target.innerText)
                                        }}>{strItem}</p>)
                         })}
                     </div>
