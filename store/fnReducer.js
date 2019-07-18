@@ -76,7 +76,11 @@ let fnReducer = (state = defaultState, objAction) => {
     if (objAction.type === '命令书_更新str_textArea') {
         let newState = JSON.parse(JSON.stringify(state))
         let str = ''
-        str = newState.word_name + '\r\n' + newState.word_yinBiao + '\r\n' + newState.word_ciGeng + '\r\n\r\n'
+        let str词头 = newState.word_name + '\r\n'
+        let str音标 = newState.word_yinBiao + '\r\n'
+        let str词根 = '-> ' + newState.word_ciGeng + '\r\n\r\n'
+
+        str = str词头 + str音标 + str词根
 
         str += moduleMyfunc.fn_将arr_selectedContent转换成str_textArea(newState.arr_selectedContent)
         newState.str_textArea = str

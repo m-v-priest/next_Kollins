@@ -19,8 +19,9 @@ export default class Cpn_selectedContents extends React.Component {
     render() {
         return (
             <React.Fragment>
+                <p>选出的释义与例句内容:</p>
 
-                <div> 选出的释义与例句内容:
+                <div style={objCss.css选出的内容}>
                     {this.state.arr_selectedContent
                         .map((item, index, arr) => {
                             return (<p key={index}
@@ -41,3 +42,10 @@ export default class Cpn_selectedContents extends React.Component {
     }
 
 }
+
+//----------------------------------------
+
+let objCss = {
+    css选出的内容: {height: "200px", border: "1px solid", overflow: "auto"},
+}
+

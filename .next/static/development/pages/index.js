@@ -6883,7 +6883,9 @@ function (_React$Component) {
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(Cpn_SingleWordAllInfo, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_7___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", null, " kollins\u4E2D\u5BF9\u672C\u5355\u8BCD\u7684\u89E3\u91CA:", react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("p", null, "\u7D22\u5F15\u503C\u4E3A: ", this.state.index_wordCurrentFind), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("p", null, "\u8BCD\u5934: ", this.state.word_name, " | \u97F3\u6807: ", this.state.word_yinBiao), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("p", null, "\u8BCD\u6839: ", this.state.word_ciGeng), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", null, "\u6240\u6709\u91CA\u4F8B:", this.state.word_ArrDef.map(function (strItem, index, arr) {
+      return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_7___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", null, " kollins\u4E2D\u5BF9\u672C\u5355\u8BCD\u7684\u89E3\u91CA:", react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("p", null, "\u7D22\u5F15\u503C\u4E3A: ", this.state.index_wordCurrentFind), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("p", null, "\u8BCD\u5934: ", this.state.word_name, " | \u97F3\u6807: ", this.state.word_yinBiao), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("p", null, "\u8BCD\u6839: ", this.state.word_ciGeng), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+        style: objCss.css单个单词搜索
+      }, "\u6240\u6709\u91CA\u4F8B:", this.state.word_ArrDef.map(function (strItem, index, arr) {
         return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("p", {
           key: index,
           onClick: function onClick(event) {
@@ -6895,9 +6897,17 @@ function (_React$Component) {
   }]);
 
   return Cpn_SingleWordAllInfo;
-}(react__WEBPACK_IMPORTED_MODULE_7___default.a.Component);
+}(react__WEBPACK_IMPORTED_MODULE_7___default.a.Component); //----------------------------------------
 
 
+
+var objCss = {
+  css单个单词搜索: {
+    height: "200px",
+    border: "1px solid",
+    overflow: "auto"
+  }
+};
 
 /***/ }),
 
@@ -7074,7 +7084,9 @@ function (_React$Component) {
   Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(Cpn_selectedContents, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_7___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", null, " \u9009\u51FA\u7684\u91CA\u4E49\u4E0E\u4F8B\u53E5\u5185\u5BB9:", this.state.arr_selectedContent.map(function (item, index, arr) {
+      return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_7___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("p", null, "\u9009\u51FA\u7684\u91CA\u4E49\u4E0E\u4F8B\u53E5\u5185\u5BB9:"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+        style: objCss.css选出的内容
+      }, this.state.arr_selectedContent.map(function (item, index, arr) {
         return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("p", {
           key: index,
           onClick: function onClick() {
@@ -7086,9 +7098,17 @@ function (_React$Component) {
   }]);
 
   return Cpn_selectedContents;
-}(react__WEBPACK_IMPORTED_MODULE_7___default.a.Component);
+}(react__WEBPACK_IMPORTED_MODULE_7___default.a.Component); //----------------------------------------
 
 
+
+var objCss = {
+  css选出的内容: {
+    height: "200px",
+    border: "1px solid",
+    overflow: "auto"
+  }
+};
 
 /***/ }),
 
@@ -7183,21 +7203,46 @@ function (_React$Component) {
         onClick: function onClick() {
           _store_myFunc_js__WEBPACK_IMPORTED_MODULE_11__["fn_发送命令书_获取下20个单词"]();
         }
-      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("p", null, "index [", this.state.index_start, "-", this.state.index_end, "] \u4E2D\u7684\u8BCD\u5934\u6709:"), this.state.arr_wordNameInSlice.map(function (itemWordName, index, arr) {
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("p", null, "index [", this.state.index_start, "-", this.state.index_end, "] \u4E2D\u7684\u8BCD\u5934\u6709:"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+        style: objCss.容器
+      }, this.state.arr_wordNameInSlice.map(function (itemWordName, index, arr) {
         return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("span", {
           key: index,
+          style: objCss.子项,
           onClick: function onClick() {
             _store_myFunc_js__WEBPACK_IMPORTED_MODULE_11__["fn_发送命令书_搜索单词"](event.target.innerText);
           }
         }, itemWordName);
-      })), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("hr", null));
+      }))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("hr", null));
     }
   }]);
 
   return Cpn_sliceArrWordName;
-}(react__WEBPACK_IMPORTED_MODULE_7___default.a.Component);
+}(react__WEBPACK_IMPORTED_MODULE_7___default.a.Component); //----------------------------------------
 
 
+
+var objCss = {
+  容器: {
+    /*里面有专属于容器的flex属性*/
+    display: 'flex',
+    height: '200px',
+    border: "solid 1px",
+    // flexDirection: 'row-reverse', /*每行中的元素, 从右到左排*/
+    flexWrap: 'wrap',
+
+    /*一行超过容器宽度, 就换行*/
+    alignContent: "flex-start",
+    //行与行的行距, 不平均分配容器的高度, 而是采用默认的固定行距.
+    overflow: "auto" //超出高度则使用滚动条
+
+  },
+  子项: {
+    /*里面有专属于子项的flex属性*/
+    width: '33.33%' // flexGrow: 1, //一行中无论有几个元素, 都平均分配容器的宽度
+
+  }
+};
 
 /***/ }),
 
@@ -7490,7 +7535,10 @@ var fnReducer = function fnReducer() {
     var _newState5 = JSON.parse(_babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_3___default()(state));
 
     var str = '';
-    str = _newState5.word_name + '\r\n' + _newState5.word_yinBiao + '\r\n' + _newState5.word_ciGeng + '\r\n\r\n';
+    var str词头 = _newState5.word_name + '\r\n';
+    var str音标 = _newState5.word_yinBiao + '\r\n';
+    var str词根 = '-> ' + _newState5.word_ciGeng + '\r\n\r\n';
+    str = str词头 + str音标 + str词根;
     str += _store_myFunc_js__WEBPACK_IMPORTED_MODULE_5__["fn_将arr_selectedContent转换成str_textArea"](_newState5.arr_selectedContent);
     _newState5.str_textArea = str;
     return _newState5;

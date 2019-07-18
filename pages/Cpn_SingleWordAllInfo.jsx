@@ -24,7 +24,7 @@ export default class Cpn_SingleWordAllInfo extends React.Component {
                     <p>词头: {this.state.word_name} | 音标: {this.state.word_yinBiao}</p>
                     <p>词根: {this.state.word_ciGeng}</p>
 
-                    <div>所有释例:
+                    <div style={objCss.css单个单词搜索}>所有释例:
                         {this.state.word_ArrDef.map((strItem, index, arr) => {
                             return (<p key={index}
                                        onClick={(event) => {
@@ -45,3 +45,10 @@ export default class Cpn_SingleWordAllInfo extends React.Component {
     }
 
 }
+
+//----------------------------------------
+
+let objCss = {
+    css单个单词搜索: {height: "200px", border: "1px solid", overflow: "auto"},
+}
+
