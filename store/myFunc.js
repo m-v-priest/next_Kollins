@@ -26,6 +26,10 @@ export let fn_发送命令书_获取下20个单词 = () => {
     objStore.dispatch(moduleActionFactory.fn_创建命令书_获取下20个单词())
 }
 
+export let fn_发送命令书_获取上20个单词 = () => {
+    objStore.dispatch(moduleActionFactory.fn_创建命令书_获取上20个单词())
+}
+
 export let fn_发送命令书_更新arrSelectedContent = () => {
     objStore.dispatch(moduleActionFactory.fn_创建命令书_udpate_arrSelectedContent(event.target.innerText))
 }
@@ -40,6 +44,10 @@ export let fn_发送命令书_更新str_textArea = () => {
 
 export let fn_发送命令书_清空str_textArea = () => {
     objStore.dispatch(moduleActionFactory.fn_创建命令书_清空str_textArea())
+}
+
+export let fn_发送命令书_可编辑str_textArea = () => {
+    objStore.dispatch(moduleActionFactory.fn_创建命令书_可编辑str_textArea())
 }
 
 

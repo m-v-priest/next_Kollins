@@ -124,6 +124,15 @@ let fnReducer = (state = defaultState, objAction) => {
     }
 
 
+    if (objAction.type === '命令书_获取上20个单词') {
+        let newState = JSON.parse(JSON.stringify(state))
+        newState.index_start = parseInt(newState.index_start) -20
+        newState.index_end = parseInt(newState.index_end) -20
+        newState.arr_wordNameInSlice = fn_获取数组切片区间中的词头(newState.arr_KollinsAllWords, newState.index_start, newState.index_end)
+        return newState
+    }
+
+
     if (objAction.type === '命令书_清空str_textArea') {
         let newState = JSON.parse(JSON.stringify(state))
         newState.str_textArea = '' //除了清空文本框中的值外
@@ -134,6 +143,15 @@ let fnReducer = (state = defaultState, objAction) => {
          */
         return newState
     }
+
+    if (objAction.type === '命令书_可编辑str_textArea') {
+        let newState = JSON.parse(JSON.stringify(state))
+        newState.str_textArea = objAction.value
+        return newState
+    }
+
+
+
 
 
     return state //如果没有进入上面的if语句而返回一个newState, 本函数也要返回一个默认的defaultState.

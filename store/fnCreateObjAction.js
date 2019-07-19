@@ -49,6 +49,17 @@ export function fn_创建命令书_获取下20个单词(valueNew) {
     return objAction
 }
 
+export function fn_创建命令书_获取上20个单词(valueNew) {
+    let objAction = {
+        type: '命令书_获取上20个单词',
+        value: valueNew,
+    }
+    return objAction
+}
+
+
+
+
 
 export function fn_创建命令书_udpate_arrSelectedContent(valueNew) {
     let objAction = {
@@ -78,6 +89,14 @@ export function fn_创建命令书_更新str_textArea(valueNew) {
 export function fn_创建命令书_清空str_textArea(valueNew) {
     let objAction = {
         type: '命令书_清空str_textArea',
+        value: valueNew,
+    }
+    return objAction
+}
+
+export function fn_创建命令书_可编辑str_textArea(valueNew) {
+    let objAction = {
+        type: '命令书_可编辑str_textArea',
         value: valueNew,
     }
     return objAction

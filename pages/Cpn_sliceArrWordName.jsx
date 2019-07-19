@@ -49,6 +49,14 @@ export default class Cpn_sliceArrWordName extends React.Component {
                                moduleMyfunc.fn_发送命令书_获取下20个单词()
                            }}
                     />
+                    &nbsp;
+
+                    {/*上20个单词*/}
+                    <input type="button" value='上20个单词'
+                           onClick={() => {
+                               moduleMyfunc.fn_发送命令书_获取上20个单词()
+                           }}
+                    />
 
 
                     {/*显示切片区间中的所有词头*/}
@@ -89,7 +97,7 @@ let objCss = {
         // flexDirection: 'row-reverse', /*每行中的元素, 从右到左排*/
         flexWrap: 'wrap', /*一行超过容器宽度, 就换行*/
         alignContent: "flex-start", //行与行的行距, 不平均分配容器的高度, 而是采用默认的固定行距.
-        overflow: "auto", //超出高度则使用滚动条
+        overflow: "auto", //超出高度则使用滚动条,
     },
 
     子项: { /*里面有专属于子项的flex属性*/

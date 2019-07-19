@@ -22,16 +22,32 @@ export default class Cpn_Index extends React.Component {
             <React.Fragment>
                 <p>kollins主控台</p>
 
-                <Cpn_FindSingleWord/>
-                <Cpn_sliceArrWordName/>
-                <Cpn_SingleWordAllInfo/>
-                <Cpn_selectedContents/>
-                <Cpn_TextArea/>
+                <div id ='id词头切片数组' style={objCss.css词头切片数组}>
+                    <Cpn_sliceArrWordName/>
+                </div>
 
+                <div id='id其他div元素的整体' style={objCss.css其他div元素的整体}>
+                    <Cpn_FindSingleWord/>
+                    <Cpn_SingleWordAllInfo/>
+                    <Cpn_selectedContents/>
+                    <Cpn_TextArea/>
+                </div>
             </React.Fragment>
         )
     }
 
+    componentDidMount() {
+        let divHeight = document.getElementById('id词头切片数组').offsetHeight
+    }
+
+}
+
+let objCss = {
+    css词头切片数组: {position: "fixed",background:"rgba(240,240,240,1)" }, //让这个div元素浮动固定.
+    /*注意: flex是不支持浮动的, 但是我们可以在运用了flex样式的元素的外面,再包一层div,
+    对这个div运用传统的css样式, 就能使用position来浮动了.
+     */
+    css其他div元素的整体:{marginTop:"360px"}
 }
 
 

@@ -33,15 +33,23 @@ export default class Cpn_TextArea extends React.Component {
 
                 <form action="#"
                       method="get"
-                      onSubmit={(event) => {
-                          this.fn提交表单(event)
-                      }}>
+                      // onSubmit={() => { //此方式被验证为不可行.
+                      //     moduleMyfunc.fn_发送命令书_获取切片中的词头数组()
+                      //     /*注意!!! 这里一定要重新获取切片中的词头!!
+                      //     因为你这里的词头数组, 是页面渲染后, 再来用按钮手动从state中拿到的,
+                      //     所以并非是页面渲染前的state中的原始数据,
+                      //     所以当本表单被提交后, 后天拿到的state中的数据都会被清空!
+                      //     所以你必须在表单提交后, 再次来获取这个词头数组, 才能保持页面上这块数据的永远显示.
+                      //     */
+                      // }}
+                >
 
                     {/*多行文本框, 存放已选出来的句子*/}
                     <textarea rows="10" cols="50"
                               name={'area_StrSelected'}
                               value={this.state.str_textArea}
-                              onChange={(event) => {
+                              onChange={() => {
+                                  moduleMyfunc.fn_发送命令书_可编辑str_textArea(event.target.value)
                               }}/>
                     <br/>
 
