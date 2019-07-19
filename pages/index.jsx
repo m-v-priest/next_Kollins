@@ -38,6 +38,16 @@ export default class Cpn_Index extends React.Component {
 
     componentDidMount() {
         let divHeight = document.getElementById('id词头切片数组').offsetHeight
+
+        //拿到 Window.localStorage对象, 我们把index_start 和 index_end 属性, 存放在Window.localStorage对象中, 免得每次刷新页面, 即提交表单后, 会导致index_start 和 index_end 这两个属性的被重置.
+        // function fn_getWindowLocalStorage() {
+        //     let objStorage = window.localStorage;
+        //     objStorage.indexStart = 0 //进行初始化
+        //     objStorage.indexEnd = 19
+        // }
+
+        // fn_getWindowLocalStorage()
+
     }
 
 }

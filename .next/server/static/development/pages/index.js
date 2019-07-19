@@ -1097,7 +1097,13 @@ function (_React$Component) {
   }, {
     key: "componentDidMount",
     value: function componentDidMount() {
-      var divHeight = document.getElementById('id词头切片数组').offsetHeight;
+      var divHeight = document.getElementById('id词头切片数组').offsetHeight; //拿到 Window.localStorage对象, 我们把index_start 和 index_end 属性, 存放在Window.localStorage对象中, 免得每次刷新页面, 即提交表单后, 会导致index_start 和 index_end 这两个属性的被重置.
+      // function fn_getWindowLocalStorage() {
+      //     let objStorage = window.localStorage;
+      //     objStorage.indexStart = 0 //进行初始化
+      //     objStorage.indexEnd = 19
+      // }
+      // fn_getWindowLocalStorage()
     }
   }]);
 
@@ -1289,6 +1295,8 @@ var defaultState = {
   //数组切片的起始索引值
   index_end: 19,
   //数组切片的尾索引值
+  // index_start: objStorage.indexStart,
+  // index_end: objStorage.indexEnd,
   arr_wordNameInSlice: [],
   //存放对数组切片后, 里面的所有词头组成的数组
   word_name: '',
@@ -1369,7 +1377,19 @@ var fnReducer = function fnReducer() {
   if (objAction.type === '命令书_查找SingleWord') {
     var _newState6 = JSON.parse(_babel_runtime_corejs2_core_js_json_stringify__WEBPACK_IMPORTED_MODULE_3___default()(state));
 
-    _newState6.word_currentFind = objAction.value;
+    _newState6.word_currentFind = objAction.value; // 用 for...of 来做不起作用, 不知原因为何??
+    // for (let index = 0; index <= newState.arr_KollinsAllWords.length, index++;) {
+    //     if (newState.arr_KollinsAllWords[index]["key词头"] === objAction.value) {
+    //         newState.index_wordCurrentFind = index
+    //         newState.word_name = newState.arr_KollinsAllWords[index]["key词头"]
+    //         newState.word_yinBiao = newState.arr_KollinsAllWords[index]["key音标"]
+    //         newState.word_ciGeng = newState.arr_KollinsAllWords[index]["key词根"]
+    //         newState.word_ArrDef = moduleMyfunc.fn_处理所有释例到一维数组(newState.arr_KollinsAllWords[index]["key所有释例"])
+    //         newState.arr_selectedContent = [] //当重新查询单词时, 就清空上一次选出的内容
+    //         break
+    //     }
+    // }
+    //
 
     _newState6.arr_KollinsAllWords.forEach(function (itemWord, index, arr) {
       if (itemWord["key词头"] === objAction.value) {
