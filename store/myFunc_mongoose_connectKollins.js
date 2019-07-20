@@ -22,13 +22,13 @@ let docReactState = { //会插入到 react collection 中的第一条文档
     str_textArea: '',               //将选出的内容,放入文本框中. 方便发送给后端node.js来另存文件.
 }
 
-let ModelReactState = fn_连接ReactState的collection_返回ModelReactState()
+let ModelReactState = fn_获取ModelReactState()
 
 
 module.exports = {
     ModelReactState,
     fn_连接数据库,
-    fn_连接ReactState的collection_返回ModelReactState,
+    fn_获取ModelReactState,
     fn_findAllDoc
 }
 
@@ -57,7 +57,7 @@ function fn_连接数据库(url) {
 
 //----------------------------------------
 
-function fn_连接柯林斯collection_返回ModelKollins() {
+function fn_获取ModelKollins() {
     // 创建柯林斯辞典的表头模型, 类似于接口.
     let SchemaKollins = mongoose.Schema({
         wordName: String,
@@ -80,7 +80,7 @@ function fn_连接柯林斯collection_返回ModelKollins() {
 
 //----------------------------------------
 
-function fn_连接ReactState的collection_返回ModelReactState() {
+function fn_获取ModelReactState() {
     // 创建一个我们react的state对象的表头模型
     let SchemaReactState = mongoose.Schema({
         url_BigArrJsonKollins: String,
@@ -104,7 +104,19 @@ function fn_连接ReactState的collection_返回ModelReactState() {
     })
 
     //根据表头模型, 生成Model对象(Model 就是我们用来构造 文档document 的 Class。)
-    let ModelReactState = mongoose.model('colReactState', SchemaReactState)
+    let ModelReactState
+    if (mongoose.models && mongoose.models['colreactstates']) {
+        console.log('model已存在');
+        console.log('mongoose.models -->', mongoose.models);
+        // console.log('mongoose.models[\'colreactstates\']-->',mongoose.models['colreactstates']);
+        //如果ModelReactState之前就已经被创建出来了,这里不需要重复创建了, 我们就直接返回它
+        ModelReactState = mongoose.models['colreactstates'];
+    }
+    else { //如果ModelReactState还没创建过, 就新建它
+        ModelReactState = mongoose.model('colreactstates', SchemaReactState)
+        console.log('新建了model');
+        console.log('ModelReactState -->', ModelReactState);
+    }
     return ModelReactState
 }
 

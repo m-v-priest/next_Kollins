@@ -42,10 +42,11 @@ app.prepare().then(() => {
             fn_写入文件('../01_myLearn/辞典kollins/柯林斯选.txt', objQuery.area_StrSelected + '\r\n---------------------\r\n\r\n')
 
 
-            // 查看kollins collection 里面的所有document.
-            myFunc_mongoose_connectKollins.fn_findAllDoc(
-                myFunc_mongoose_connectKollins.ModelReactState, {}, ["index_start", "index_end"])
-        }
+            // 使用数据库, 查看kollins collection 里面的所有document. 下面代码亲测是成功的!
+            // 注意, 更改了本server.js的代码后, 需要每次重新运行 npm run dev 才能看到效果
+        //     myFunc_mongoose_connectKollins.fn_findAllDoc(
+        //         myFunc_mongoose_connectKollins.ModelReactState, {}, ["index_wordCurrentFind", "index_start", "index_end"])
+        // }
 
 
         else {

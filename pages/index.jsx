@@ -22,7 +22,7 @@ export default class Cpn_Index extends React.Component {
         return (
             <React.Fragment>
                 <p>kollins主控台</p>
-                <Cpn_test/>
+                {/*<Cpn_test/>*/}
 
                     <div id='id词头切片数组' style={objCss.css词头切片数组}>
                         <Cpn_sliceArrWordName/>
