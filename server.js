@@ -44,9 +44,9 @@ app.prepare().then(() => {
 
             // 使用数据库, 查看kollins collection 里面的所有document. 下面代码亲测是成功的!
             // 注意, 更改了本server.js的代码后, 需要每次重新运行 npm run dev 才能看到效果
-        //     myFunc_mongoose_connectKollins.fn_findAllDoc(
-        //         myFunc_mongoose_connectKollins.ModelReactState, {}, ["index_wordCurrentFind", "index_start", "index_end"])
-        // }
+            myFunc_mongoose_connectKollins.fn_findAllDoc(
+                myFunc_mongoose_connectKollins.ModelReactState, {}, ["index_wordCurrentFind", "index_start", "index_end"])
+        }
 
 
         else {
