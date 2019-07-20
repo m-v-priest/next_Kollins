@@ -9,6 +9,7 @@ import Cpn_sliceArrWordName from '../pages/Cpn_sliceArrWordName'
 import Cpn_SingleWordAllInfo from '../pages/Cpn_SingleWordAllInfo'
 import Cpn_selectedContents from '../pages/Cpn_selectedContents'
 import Cpn_TextArea from '../pages/Cpn_TextArea'
+import Cpn_test from '../pages/Cpn_test'
 
 
 export default class Cpn_Index extends React.Component {
@@ -21,19 +22,20 @@ export default class Cpn_Index extends React.Component {
         return (
             <React.Fragment>
                 <p>kollins主控台</p>
+                <Cpn_test/>
 
-                <div id ='id词头切片数组' style={objCss.css词头切片数组}>
-                    <Cpn_sliceArrWordName/>
-                </div>
+                    <div id='id词头切片数组' style={objCss.css词头切片数组}>
+                        <Cpn_sliceArrWordName/>
+                    </div>
 
-                <div id='id其他div元素的整体' style={objCss.css其他div元素的整体}>
-                    <Cpn_FindSingleWord/>
-                    <Cpn_SingleWordAllInfo/>
-                    <Cpn_selectedContents/>
-                    <Cpn_TextArea/>
-                </div>
+                    <div id='id其他div元素的整体' style={objCss.css其他div元素的整体}>
+                        <Cpn_FindSingleWord/>
+                        <Cpn_SingleWordAllInfo/>
+                        <Cpn_selectedContents/>
+                        <Cpn_TextArea/>
+                    </div>
             </React.Fragment>
-        )
+    )
     }
 
     componentDidMount() {
@@ -50,18 +52,18 @@ export default class Cpn_Index extends React.Component {
 
     }
 
-}
+    }
 
-let objCss = {
-    css词头切片数组: {position: "fixed",background:"rgba(240,240,240,1)" }, //让这个div元素浮动固定.
-    /*注意: flex是不支持浮动的, 但是我们可以在运用了flex样式的元素的外面,再包一层div,
-    对这个div运用传统的css样式, 就能使用position来浮动了.
-     */
-    css其他div元素的整体:{marginTop:"360px"}
-}
+    let objCss = {
+        css词头切片数组: {position: "fixed",background:"rgba(240,240,240,1)"}, //让这个div元素浮动固定.
+        /*注意: flex是不支持浮动的, 但是我们可以在运用了flex样式的元素的外面,再包一层div,
+        对这个div运用传统的css样式, 就能使用position来浮动了.
+         */
+        css其他div元素的整体:{marginTop:"360px"}
+    }
 
 
-// let objCss = {
+    // let objCss = {
 //     容器: { /**/
 //         display: 'flex',
 //         height: '200px',

@@ -3,8 +3,18 @@ const {parse} = require('url')
 const next = require('next')
 const url = require('url')
 const fs = require('fs')
+let myFunc_mongoose_connectKollins = require('./store/myFunc_mongoose_connectKollins')
+
+//----------------------------------------
+
+let url_DbTest = "mongodb://localhost/test"
+//连接test数据库
+myFunc_mongoose_connectKollins.fn_连接数据库(url_DbTest) //拿到 collection reactState 的 model对象
 
 
+//----------------------------------------
+
+//开启node.js服务器
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({dev})
 const handle = app.getRequestHandler()
@@ -29,14 +39,14 @@ app.prepare().then(() => {
             //react中多行文本框的数据, 在get请求的area_StrSelected字段中.
             console.log(objQuery.area_StrSelected);
 
-            fn_写入文件('../01_myLearn/辞典kollins/柯林斯选.txt',objQuery.area_StrSelected+'\r\n---------------------\r\n\r\n')
+            fn_写入文件('../01_myLearn/辞典kollins/柯林斯选.txt', objQuery.area_StrSelected + '\r\n---------------------\r\n\r\n')
 
+
+            // 查看kollins collection 里面的所有document.
+            myFunc_mongoose_connectKollins.fn_findAllDoc(
+                myFunc_mongoose_connectKollins.ModelReactState, {}, ["index_start", "index_end"])
         }
 
-        else if (pathname === '/Cpn_Daughter') {
-            app.render(req, res, '/Cpn_Daughter', query)
-            console.log(url.parse(req.url, true).query); //获取发送给本pathname的 GET请求内容
-        }
 
         else {
             handle(req, res, parsedUrl)
