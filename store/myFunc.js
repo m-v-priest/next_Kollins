@@ -1,5 +1,6 @@
 import objStore from "./objStore";
 import * as moduleActionFactory from "./fnCreateObjAction";
+import axios from "axios";
 
 
 export let fn_发送命令书_双向绑定word_currentFind = (event) => {
@@ -50,6 +51,10 @@ export let fn_发送命令书_可编辑str_textArea = () => {
     objStore.dispatch(moduleActionFactory.fn_创建命令书_可编辑str_textArea())
 }
 
+export let fn_发送命令书_两步并一步直接更新到txt = () => {
+    objStore.dispatch(moduleActionFactory.fn_创建命令书_两步并一步直接更新到txt())
+}
+
 
 
 
@@ -81,4 +86,22 @@ export let fn_将arr_selectedContent转换成str_textArea = (arr) => {
         })
     }
     return str
+}
+
+
+//将选出的句子(文本框中的),用ajax请求提交给服务器
+export let fn_sendTextareaContent_ByAxios = (value) => {
+    console.log('执行fn_sendTextareaContent_ByAxios()函数');
+    axios.get('#',
+        {
+            params:
+                {textareaContent: value}
+        })
+        .then(res => {
+            console.log(res.data);
+        })
+        .catch(err => {
+            console.log(err);
+        })
+
 }

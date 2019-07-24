@@ -9,7 +9,6 @@ import Cpn_sliceArrWordName from '../pages/Cpn_sliceArrWordName'
 import Cpn_SingleWordAllInfo from '../pages/Cpn_SingleWordAllInfo'
 import Cpn_selectedContents from '../pages/Cpn_selectedContents'
 import Cpn_TextArea from '../pages/Cpn_TextArea'
-import Cpn_test from '../pages/Cpn_test'
 
 
 export default class Cpn_Index extends React.Component {
@@ -22,7 +21,6 @@ export default class Cpn_Index extends React.Component {
         return (
             <React.Fragment>
                 <p>kollins主控台</p>
-                {/*<Cpn_test/>*/}
 
                     <div id='id词头切片数组' style={objCss.css词头切片数组}>
                         <Cpn_sliceArrWordName/>

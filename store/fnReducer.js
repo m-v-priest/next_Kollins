@@ -168,6 +168,24 @@ let fnReducer = (state = defaultState, objAction) => {
         return newState
     }
 
+    if (objAction.type === '命令书_两步并一步直接更新到txt') {
+        let newState = JSON.parse(JSON.stringify(state))
+        let str = ''
+        let str词头 = newState.word_name + '\r\n'
+        let str音标 = newState.word_yinBiao + '\r\n'
+        let str词根 = '-> ' + newState.word_ciGeng + '\r\n\r\n'
+
+        str = str词头 + str音标 + str词根
+
+        str += moduleMyfunc.fn_将arr_selectedContent转换成str_textArea(newState.arr_selectedContent)
+        moduleMyfunc.fn_sendTextareaContent_ByAxios(str)
+        newState.str_textArea = str
+        return newState
+    }
+
+
+
+
 
     return state //如果没有进入上面的if语句而返回一个newState, 本函数也要返回一个默认的defaultState.
 }

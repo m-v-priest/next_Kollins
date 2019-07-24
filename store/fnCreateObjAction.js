@@ -58,7 +58,13 @@ export function fn_创建命令书_获取上20个单词(valueNew) {
 }
 
 
-
+export function fn_创建命令书_两步并一步直接更新到txt(valueNew) {
+    let objAction = {
+        type: '命令书_两步并一步直接更新到txt',
+        value: valueNew,
+    }
+    return objAction
+}
 
 
 export function fn_创建命令书_udpate_arrSelectedContent(valueNew) {

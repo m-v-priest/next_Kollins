@@ -42,6 +42,13 @@ export default class Cpn_sliceArrWordName extends React.Component {
                     />
                     &nbsp;
 
+                    {/*上20个单词*/}
+                    <input type="button" value='上20个单词'
+                           onClick={() => {
+                               moduleMyfunc.fn_发送命令书_获取上20个单词()
+                           }}
+                    />
+                    &nbsp;
 
                     {/*下20个单词*/}
                     <input type="button" value='下20个单词'
@@ -49,15 +56,6 @@ export default class Cpn_sliceArrWordName extends React.Component {
                                moduleMyfunc.fn_发送命令书_获取下20个单词()
                            }}
                     />
-                    &nbsp;
-
-                    {/*上20个单词*/}
-                    <input type="button" value='上20个单词'
-                           onClick={() => {
-                               moduleMyfunc.fn_发送命令书_获取上20个单词()
-                           }}
-                    />
-
 
                     {/*显示切片区间中的所有词头*/}
                     <p>index [{this.state.index_start}-{this.state.index_end}] 中的词头有:</p>

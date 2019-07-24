@@ -8,7 +8,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios'
 
-
 import objStore from '../store/objStore.js'
 import * as moduleAction from '../store/fnCreateObjAction.js'
 import * as moduleMyfunc from "../store/myFunc";
@@ -27,11 +26,20 @@ export default class Cpn_TextArea extends React.Component {
 
                 {/*按钮: 把选出内容添加到文本框*/}
                 <input type="button"
-                       value={'添加到下面的文本框中'}
+                       value={'1.添加到下面的文本框中'}
                        onClick={() => {
                            moduleMyfunc.fn_发送命令书_更新str_textArea()
                        }}
                 />
+                &nbsp; 或&nbsp;
+
+                <input type="button"
+                       value={'3.两步并一步:直接更新到txt'}
+                       onClick={() => {
+                           moduleMyfunc.fn_发送命令书_两步并一步直接更新到txt()
+                       }}
+                />
+
 
                 {/*多行文本框, 存放已选出来的句子*/}
                 <textarea rows="10" cols="50"
@@ -52,8 +60,10 @@ export default class Cpn_TextArea extends React.Component {
 
                 {/*按钮:保存文本框中的值到电脑文件*/}
                 <input type="button"
-                       value="让服务器保存文件到电脑上"
-                       onClick={()=>{this.fn_sendTextareaContent_ByAxios(this.state.str_textArea)}}
+                       value="2.让服务器保存文件到电脑上"
+                       onClick={() => {
+                           moduleMyfunc.fn_sendTextareaContent_ByAxios(this.state.str_textArea)
+                       }}
                 />
 
 
@@ -67,20 +77,5 @@ export default class Cpn_TextArea extends React.Component {
         this.setState(objStore.getState())
     }
 
-    fn_sendTextareaContent_ByAxios = (value) => {
-        console.log('执行fn_sendTextareaContent_ByAxios()函数');
-        axios.get('#',
-            {
-                params:
-                    {textareaContent: value}
-            })
-            .then(res=>{
-                console.log(res.data);
-            })
-            .catch(err=>{
-                console.log(err);
-            })
-
-    }
 
 }
