@@ -90,7 +90,7 @@ export default class Cpn_sliceArrWordName extends React.Component {
 let objCss = {
     容器: { /*里面有专属于容器的flex属性*/
         display: 'flex',
-        height: '200px',
+        height: '110px',
         border: "solid 1px",
         // flexDirection: 'row-reverse', /*每行中的元素, 从右到左排*/
         flexWrap: 'wrap', /*一行超过容器宽度, 就换行*/
@@ -99,7 +99,7 @@ let objCss = {
     },
 
     子项: { /*里面有专属于子项的flex属性*/
-        width: '33.33%',
+        width: '25%',
         // flexGrow: 1, //一行中无论有几个元素, 都平均分配容器的宽度
     }
 }

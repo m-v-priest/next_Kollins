@@ -20,8 +20,10 @@ export default class Cpn_SingleWordAllInfo extends React.Component {
             <React.Fragment>
 
                 <div> kollins中对本单词的解释:
-                    <p>索引值为: {this.state.index_wordCurrentFind}</p>
-                    <p>词头: {this.state.word_name} | 音标: {this.state.word_yinBiao}</p>
+                    <p>
+                        索引值为: {this.state.index_wordCurrentFind} |
+                    词头: {this.state.word_name} |
+                    音标: {this.state.word_yinBiao}</p>
                     <p>词根: {this.state.word_ciGeng}</p>
 
                     <div style={objCss.css单个单词搜索}>所有释例:
