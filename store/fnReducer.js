@@ -30,6 +30,7 @@ let defaultState = {
 
     arr_selectedContent: [], //存放选出的释义与例句内容
     str_textArea: '', //将选出的内容,放入文本框中. 方便发送给后端node.js来另存文件.
+    kindName:"", //分类辞典的该单词的分类
 }
 
 
@@ -178,11 +179,21 @@ let fnReducer = (state = defaultState, objAction) => {
         str = str词头 + str音标 + str词根
 
         str += moduleMyfunc.fn_将arr_selectedContent转换成str_textArea(newState.arr_selectedContent)
-        moduleMyfunc.fn_sendTextareaContent_ByAxios(str)
+
+        console.log('两步部并一步 kindName-->',newState.kindName);
+
+        moduleMyfunc.fn_sendTextareaContent_ByAxios(str,newState.kindName)
         newState.str_textArea = str
         return newState
     }
 
+
+    if (objAction.type === '命令书_updateKindName') {
+        // console.log('收到命令更新kindName',objAction.value);
+        let newState = JSON.parse(JSON.stringify(state))
+        newState.kindName = objAction.value
+        return newState
+    }
 
 
 

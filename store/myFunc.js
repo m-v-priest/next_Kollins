@@ -55,6 +55,10 @@ export let fn_发送命令书_两步并一步直接更新到txt = () => {
     objStore.dispatch(moduleActionFactory.fn_创建命令书_两步并一步直接更新到txt())
 }
 
+export let fn_发送命令书_updateKindName = (value) => {
+    objStore.dispatch(moduleActionFactory.fn_创建命令书_updateKindName(value))
+}
+
 
 
 
@@ -90,12 +94,14 @@ export let fn_将arr_selectedContent转换成str_textArea = (arr) => {
 
 
 //将选出的句子(文本框中的),用ajax请求提交给服务器
-export let fn_sendTextareaContent_ByAxios = (value) => {
+export let fn_sendTextareaContent_ByAxios = (str_textArea, kindName) => {
     console.log('执行fn_sendTextareaContent_ByAxios()函数');
+    // console.log(kindName);
+
     axios.get('#',
         {
             params:
-                {textareaContent: value}
+                {textareaContent: str_textArea, kindName:kindName}
         })
         .then(res => {
             console.log(res.data);

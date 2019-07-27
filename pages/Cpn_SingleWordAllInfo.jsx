@@ -23,7 +23,7 @@ export default class Cpn_SingleWordAllInfo extends React.Component {
                     <p>
                         索引值为: {this.state.index_wordCurrentFind} |
                     词头: {this.state.word_name} |
-                    音标: {this.state.word_yinBiao}</p>
+                    音标: {this.state.word_yinBiao} | 分类:{this.state.kindName}</p>
                     <p>词根: {this.state.word_ciGeng}</p>
 
                     <div style={objCss.css单个单词搜索}>所有释例:

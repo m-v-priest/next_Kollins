@@ -37,10 +37,11 @@ app.prepare().then(() => {
              */
 
             //react中多行文本框的数据, 在get请求的area_StrSelected字段中.
-            console.log('objQuery.textareaContent ===>',objQuery.area_StrSelected);
+            // console.log('objQuery.textareaContent ===>',objQuery.area_StrSelected);
+            console.log('服务器收到objQuery.kindName -->',objQuery.kindName);
 
             console.log('+++++');
-            fn_写入文件('../01_myLearn/辞典kollins/柯林斯选.txt', objQuery.textareaContent + '\r\n---------------------\r\n\r\n')
+            fn_写入文件(`../01_myLearn/辞典kollins/柯林斯选_${objQuery.kindName}.txt`, objQuery.textareaContent + '\r\n---------------------\r\n\r\n')
 
 
             // 使用数据库, 查看kollins collection 里面的所有document. 下面代码亲测是成功的!

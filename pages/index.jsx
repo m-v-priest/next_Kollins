@@ -9,6 +9,7 @@ import Cpn_sliceArrWordName from '../pages/Cpn_sliceArrWordName'
 import Cpn_SingleWordAllInfo from '../pages/Cpn_SingleWordAllInfo'
 import Cpn_selectedContents from '../pages/Cpn_selectedContents'
 import Cpn_TextArea from '../pages/Cpn_TextArea'
+import Cpn_Classify from './Cpn_Kind'
 
 
 export default class Cpn_Index extends React.Component {
@@ -30,6 +31,7 @@ export default class Cpn_Index extends React.Component {
                     {/*<Cpn_FindSingleWord/>*/}
                     <Cpn_SingleWordAllInfo/>
                     <Cpn_selectedContents/>
+                    <Cpn_Classify/>
                     <Cpn_TextArea/>
                 </div>
             </React.Fragment>

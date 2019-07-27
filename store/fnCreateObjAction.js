@@ -111,3 +111,14 @@ export function fn_创建命令书_可编辑str_textArea(valueNew) {
 
 
 
+export function fn_创建命令书_updateKindName(valueNew) {
+    let objAction = {
+        type: '命令书_updateKindName',
+        value: valueNew,
+    }
+    return objAction
+}
+
+
+
+

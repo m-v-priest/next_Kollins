@@ -39,7 +39,7 @@ export default class Cpn_TextArea extends React.Component {
                            moduleMyfunc.fn_发送命令书_两步并一步直接更新到txt()
                        }}
                 />
-
+                <br/>
 
                 {/*多行文本框, 存放已选出来的句子*/}
                 <textarea rows="10" cols="50"
@@ -62,7 +62,8 @@ export default class Cpn_TextArea extends React.Component {
                 <input type="button"
                        value="2.让服务器保存文件到电脑上"
                        onClick={() => {
-                           moduleMyfunc.fn_sendTextareaContent_ByAxios(this.state.str_textArea)
+                           // console.log('按钮拿到kindename-->',this.state.kindName);
+                           moduleMyfunc.fn_sendTextareaContent_ByAxios(this.state.str_textArea, this.state.kindName)
                        }}
                 />
 
