@@ -13,7 +13,7 @@ export default class Cpn_Kind extends React.Component {
             <React.Fragment>
                 分类kind: 已选中{this.state.kindName}<br/>
                 <div onChange={() => {
-                    // console.log('onChange->',event.target.value);
+                    console.log('onChange->',event.target.value);
                     moduleMyfunc.fn_发送命令书_updateKindName(event.target.value)
                 }}>
                     {this.fn_creatRadio('人_生物身体')}
@@ -74,7 +74,8 @@ export default class Cpn_Kind extends React.Component {
     fn_creatRadio = (kindName) => {
         return (
             <React.Fragment>
-                <input type="radio" name="classify" value={kindName}/>{kindName} |
+                <input type="radio" name="classify" value={kindName} id={kindName}/>
+                <label htmlFor={kindName}>{kindName}</label> |
 
 
             </React.Fragment>
