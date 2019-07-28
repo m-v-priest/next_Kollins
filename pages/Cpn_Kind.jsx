@@ -22,6 +22,7 @@ export default class Cpn_Kind extends React.Component {
                     {this.fn_creatRadio('人_品质学识')}
                     {this.fn_creatRadio('人_行为动作经历人生')}
                     {this.fn_creatRadio('逻辑转折')}
+                    {this.fn_creatRadio('程度性质')}
                     <br/>
 
                     {this.fn_creatRadio('食物_水果粮食')}

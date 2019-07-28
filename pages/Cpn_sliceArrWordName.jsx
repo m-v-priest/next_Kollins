@@ -62,7 +62,8 @@ export default class Cpn_sliceArrWordName extends React.Component {
 
                     <div style={objCss.容器}>
                         {this.state.arr_wordNameInSlice.map((itemWordName, index, arr) => {
-                            return <span key={index} style={objCss.子项}
+                            return <span key={index}
+                                         style={objCss.子项}
                                          onClick={() => {
                                              moduleMyfunc.fn_发送命令书_搜索单词(event.target.innerText)
                                          }}
@@ -83,6 +84,7 @@ export default class Cpn_sliceArrWordName extends React.Component {
         this.setState(objStore.getState())
     }
 
+
 }
 
 //----------------------------------------
@@ -101,5 +103,7 @@ let objCss = {
     子项: { /*里面有专属于子项的flex属性*/
         width: '25%',
         // flexGrow: 1, //一行中无论有几个元素, 都平均分配容器的宽度
-    }
+    },
+
+
 }
