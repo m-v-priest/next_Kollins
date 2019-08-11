@@ -47,8 +47,9 @@ export default class Cpn_Kind extends React.Component {
                     <br/>
 
 
-                    {this.fn_creatRadio('物理_度量衡')}
-                    {this.fn_creatRadio('物理_时间空间')}
+                    {this.fn_creatRadio('物理_度量衡数学')}
+                    {this.fn_creatRadio('物理_时间空间地理宇宙')}
+                    {this.fn_creatRadio('物理_变化运动动态')}
                     <br/>
 
                     {this.fn_creatRadio('动物_陆地')}
